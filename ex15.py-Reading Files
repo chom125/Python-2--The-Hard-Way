@@ -1,30 +1,27 @@
-#no use of script and argv, so that line will be removed
-#file name should be saved as string, so all hard coded file names in the
-#python code should be in double quote like "ex15_sample.txt"
-#import argv, which allows user to pass in parameters from command line
-from sys import argv
-#no use of script and argv, so line commented
-#unpack argv
-#script, "ex15_sample.txt" = argv
 
-#create file object from the filename file (ex15_sample.txt in this case)
-txt = open("ex15_sample.txt")
+from sys import argv
+
+script, filename = argv
+
+#create file object from the filename file ('myfile.txt')
+txt = open('myfile.txt')
 
 #print out the contents to the console by calling txt.read()
-print "Here's your file %r:" % "ex15_sample.txt"
+print("Here's your file %r:" %('myfile.txt'))
 print txt.read()
 
 #since we are done with the file, we should close it
 txt.close()
 
 #grab filename from user input
-print "Type the filename again:"
+print("Type the filename again:")
 file_again = raw_input("> ")
 #create new file object from user inputted filename
-txt_again = open(file_again)
+txt_again = open('myfile.txt')
 #then print its contents
 print txt_again.read()
 #since we are done with the file, we should close it
 txt_again.close()
+
 
 
